@@ -5,12 +5,10 @@ build:
     build:
       - pip install -r requirements.txt
 run:
-  runtime-version: 3.11.6
-  command: streamlit run ringi_checker.py --server.port=8080 --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none
+  runtime-version: 3.11
+  command: python -m streamlit run ringi_checker.py --server.port=8080 --server.address=0.0.0.0
   network:
     port: 8080
   env:
     - name: AWS_DEFAULT_REGION
       value: us-east-1
-    - name: PYTHONUNBUFFERED
-      value: "1"

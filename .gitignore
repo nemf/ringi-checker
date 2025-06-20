@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+claude_env/
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# AWS credentials (never commit these!)
+.aws/
+aws-credentials.txt
+
+# Custom settings
+custom_check_items.json
+
+# Local test files
+test_*.pdf
+sample_*.pdf

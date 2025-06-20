@@ -3,12 +3,14 @@ runtime: docker
 build:
   commands:
     build:
-      - echo "Building ringi-checker application"
+      - echo "Building ringi-checker with Python 3.11"
 run:
   runtime-version: latest
-  command: streamlit run ringi_checker.py --server.port=8501 --server.address=0.0.0.0 --server.headless=true
+  command: streamlit run ringi_checker.py --server.port=8501 --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none
   network:
     port: 8501
   env:
     - name: AWS_DEFAULT_REGION
       value: us-east-1
+    - name: PYTHONUNBUFFERED
+      value: "1"

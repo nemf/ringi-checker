@@ -1,5 +1,5 @@
-# Python 3.12 ベースイメージ
-FROM python:3.12-slim
+# Python 3.11 ベースイメージ（App Runner サポート最新版）
+FROM python:3.11.12-slim
 
 # 作業ディレクトリを設定
 WORKDIR /app

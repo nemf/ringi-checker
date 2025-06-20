@@ -6,6 +6,7 @@ import re
 import PyPDF2
 import pdfplumber
 import io
+import os
 
 # ページ設定
 st.set_page_config(
@@ -731,4 +732,6 @@ def main():
     )
 
 if __name__ == "__main__":
+    # App Runner 用のポート設定
+    port = int(os.environ.get("PORT", 8080))
     main()

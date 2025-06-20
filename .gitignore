@@ -37,3 +37,7 @@ custom_check_items.json
 # Local test files
 test_*.pdf
 sample_*.pdf
+
+# Docker files (not needed for Python runtime)
+Dockerfile
+.dockerignore

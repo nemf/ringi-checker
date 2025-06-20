@@ -1,14 +1,14 @@
 version: 1.0
-runtime: docker
+runtime: python3
 build:
   commands:
     build:
-      - echo "Building ringi-checker with Python 3.11"
+      - pip install -r requirements.txt
 run:
-  runtime-version: latest
-  command: streamlit run ringi_checker.py --server.port=8501 --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none
+  runtime-version: 3.11.6
+  command: streamlit run ringi_checker.py --server.port=8080 --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none
   network:
-    port: 8501
+    port: 8080
   env:
     - name: AWS_DEFAULT_REGION
       value: us-east-1

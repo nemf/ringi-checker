@@ -8,7 +8,6 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
-    software-properties-common \
     && rm -rf /var/lib/apt/lists/*
 
 # 依存関係ファイルをコピー
@@ -24,7 +23,7 @@ COPY ringi_checker.py .
 EXPOSE 8501
 
 # ヘルスチェック
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
 
 # Streamlit アプリを起動
-ENTRYPOINT ["streamlit", "run", "ringi_checker.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "ringi_checker.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true", "--server.fileWatcherType=none"]

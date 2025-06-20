@@ -37,7 +37,12 @@ custom_check_items.json
 # Local test files
 test_*.pdf
 sample_*.pdf
+test_*.py
 
-# Docker files (not needed for Python runtime)
+# AWS deployment files (not needed for local development)
+apprunner.yaml
+task-definition.json
+deploy_guide.md
+.streamlit/
 Dockerfile
 .dockerignore
